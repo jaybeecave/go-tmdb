@@ -115,21 +115,23 @@ type PersonSearchResults struct {
 
 // TvSearchResults struct
 type TvSearchResults struct {
-	Page    int
-	Results []struct {
-		BackdropPath  string `json:"backdrop_path"`
-		ID            int
-		OriginalName  string   `json:"original_name"`
-		FirstAirDate  string   `json:"first_air_date"`
-		OriginCountry []string `json:"origin_country"`
-		PosterPath    string   `json:"poster_path"`
-		Popularity    float32
-		Name          string
-		VoteAverage   float32 `json:"vote_average"`
-		VoteCount     uint32  `json:"vote_count"`
-	}
+	Page         int
+	Results      []TvSearchResult
 	TotalPages   int `json:"total_pages"`
 	TotalResults int `json:"total_results"`
+}
+
+type TvSearchResult struct {
+	BackdropPath  string `json:"backdrop_path"`
+	ID            int
+	OriginalName  string   `json:"original_name"`
+	FirstAirDate  string   `json:"first_air_date"`
+	OriginCountry []string `json:"origin_country"`
+	PosterPath    string   `json:"poster_path"`
+	Popularity    float32
+	Name          string
+	VoteAverage   float32 `json:"vote_average"`
+	VoteCount     uint32  `json:"vote_count"`
 }
 
 // SearchCollection searches for collections by name
